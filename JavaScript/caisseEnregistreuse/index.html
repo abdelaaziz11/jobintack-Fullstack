@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Caisse Enregistreuse</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+      background: #f5f5f5;
+    }
+    h1 {
+      color: #333;
+    }
+    .container {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      max-width: 400px;
+    }
+    button {
+      margin: 5px;
+      padding: 10px 15px;
+      border: none;
+      background: #007bff;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    #cart {
+      margin: 15px 0;
+      padding: 10px;
+      background: #fafafa;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+    }
+    input {
+      padding: 8px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      margin-right: 10px;
+    }
+    #messages {
+      margin-top: 15px;
+      padding: 10px;
+      background: #e9ffe9;
+      border: 1px solid #b2ffb2;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Caisse Enregistreuse</h1>
+
+    <h3>Articles disponibles :</h3>
+    <button onclick="addItem('Phone')">Phone (300)</button>
+    <button onclick="addItem('Smart TV')">Smart TV (220)</button>
+    <button onclick="addItem('Gaming Console')">Gaming Console (150)</button>
+
+    <div id="cart">
+      <h3>Panier :</h3>
+      <ul id="cartList"></ul>
+      <p id="totalPrice">Total : 0</p>
+    </div>
+
+    <h3>Paiement :</h3>
+    <input type="number" id="paymentInput" placeholder="Montant en cash">
+    <button onclick="pay()">Payer</button>
+
+    <div id="messages"></div>
+  </div>
+
+  <script>
+    class CashRegister {
+      constructor() {
+        this.itemsForSale = {
+          "Phone": 300,
+          "Smart TV": 220,
+          "Gaming Console": 150
+        };
+        this.shoppingCart = [];
+      }
+
+      addItem(itemName) {
+        if (this.itemsForSale[itemName]) {
+          this.shoppingCart.push(itemName);
+          this.updateCartUI();
+        } else {
+          this.showMessage(`Désolé, nous ne vendons pas ${itemName}.`, true);
+        }
+      }
+
+      calculateTotalPrice() {
+        let total = 0;
+        this.shoppingCart.forEach(item => {
+          total += this.itemsForSale[item];
+        });
+        if (total > 400) {
+          total *= 0.9; // réduction de 10%
+        }
+        return total;
+      }
+
+      pay(paymentAmount) {
+        let totalPrice = this.calculateTotalPrice();
+        if (paymentAmount >= totalPrice) {
+          let change = paymentAmount - totalPrice;
+          this.showMessage(
+            `✅ Merci pour votre achat !<br>Total payé : ${paymentAmount}<br>Monnaie : ${change}`
+          );
+          this.shoppingCart = [];
+          this.updateCartUI();
+        } else {
+          this.showMessage(
+            `❌ Paiement insuffisant.<br>Il manque ${totalPrice - paymentAmount}.`, true
+          );
+        }
+      }
+
+      // --- UI Helpers ---
+      updateCartUI() {
+        const cartList = document.getElementById("cartList");
+        cartList.innerHTML = "";
+        this.shoppingCart.forEach(item => {
+          const li = document.createElement("li");
+          li.textContent = `${item} - ${this.itemsForSale[item]}`;
+          cartList.appendChild(li);
+        });
+        document.getElementById("totalPrice").textContent =
+          "Total : " + this.calculateTotalPrice();
+      }
+
+      showMessage(msg, error=false) {
+        const messages = document.getElementById("messages");
+        messages.style.background = error ? "#ffe9e9" : "#e9ffe9";
+        messages.style.border = error ? "1px solid #ffb2b2" : "1px solid #b2ffb2";
+        messages.innerHTML = msg;
+      }
+    }
+
+    const register = new CashRegister();
+
+    function addItem(item) {
+      register.addItem(item);
+    }
+
+    function pay() {
+      const amount = parseFloat(document.getElementById("paymentInput").value);
+      if (isNaN(amount)) {
+        register.showMessage("⚠️ Veuillez entrer un montant valide.", true);
+        return;
+      }
+      register.pay(amount);
+    }
+  </script>
+</body>
+</html>
