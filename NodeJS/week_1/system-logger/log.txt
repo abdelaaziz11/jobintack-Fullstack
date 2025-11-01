@@ -1,0 +1,14 @@
+Mémoire totale: 8192.00 MB
+Uptime: 19932.12 minutes
+Pourcentage mémoire libre: 1.27%
+[09:40:40] ⚠️ Mémoire faible : 1.27% libre
+[09:40:45] Mémoire libre: 77.95 MB
+Mémoire totale: 8192.00 MB
+Uptime: 19932.20 minutes
+Pourcentage mémoire libre: 0.95%
+[09:40:45] ⚠️ Mémoire faible : 0.95% libre
+[09:40:50] Mémoire libre: 71.84 MB
+Mémoire totale: 8192.00 MB
+Uptime: 19932.28 minutes
+Pourcentage mémoire libre: 0.88%
+[09:40:50] ⚠️ Mémoire faible : 0.88% libre

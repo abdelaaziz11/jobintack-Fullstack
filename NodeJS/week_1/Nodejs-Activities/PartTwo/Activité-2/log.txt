@@ -1,0 +1,10 @@
+
+Contenu du dossier : [ 'explorateur.js', 'log.txt' ]
+Date : 10/21/2025, 3:22:20 PM
+Nombre de fichiers trouvés : 2
+
+/Users/abdelaazizkhouda/Desktop/Desktop/LP-ERSMI/Formation-FullStack-Nodejs/Nodejs-Activities/PartTwo/Activité-2/explorateur.js
+Impossible de lire explorateur.js : filePath is not defined
+
+/Users/abdelaazizkhouda/Desktop/Desktop/LP-ERSMI/Formation-FullStack-Nodejs/Nodejs-Activities/PartTwo/Activité-2/log.txt
+Impossible de lire log.txt : filePath is not defined

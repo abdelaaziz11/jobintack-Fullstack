@@ -1,0 +1,8 @@
+HTTP/1.1 200 OK
+Content-Type: application/gzip
+Content-Disposition: attachment; filename="products.json.gz"
+X-Signature: 6af2e88cfbb2d7b1f48e12606e7ca1c98994cab1b58dfbfe46ecd83aa1f6f72b
+Date: Tue, 28 Oct 2025 08:44:48 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+Transfer-Encoding: chunked
