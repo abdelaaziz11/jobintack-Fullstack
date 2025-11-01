@@ -1,0 +1,14 @@
+curl 'http://localhost:3000/api/products'
+curl 'http://localhost:3000/api/products?category=tools&minPrice=10&maxPrice=30&sort=asc'
+
+
+
+http://localhost:3000/api/info
+http://localhost:3000/api/private
+http://localhost:3000/api/courses
+
+POST http://localhost:3000/api/courses
+GET http://localhost:3000/api/courses/2
+PUT http://localhost:3000/api/courses/2
+DELETE http://localhost:3000/api/courses/2
+

@@ -1,0 +1,25 @@
+Activitie 1
+Clarity & maintainability: modularization (routes/controllers/services) isolates responsibilities;
+easier to change business logic without touching routing. Controllers and services change a lot when API evolves.
+
+Activitie 2
+What makes a REST endpoint good: clear resource naming, correct verbs, correct use of status codes, documentation, and support for filtering/pagination.
+Idempotence importance: ensures safe retries and predictable behavior (important for network failures and proxies).
+
+Activitie 3
+Middleware global vs local: global applies to every request; local applies only to chosen routes. Local gives better performance & granularity.
+Reusability is a strength because you can compose small middlewares into different route chains.
+
+
+Activitie 4
+Why separate error logic?
+Keeps controllers/services focused on business logic.
+Provides consistent error format to clients (easy parsing and UX).
+Easier to log, monitor and change error behavior in one place.
+
+
+Activitie 5
+Why use fs.promises.readFile vs readFileSync?
+readFileSync blocks the Node event loop — other requests will wait while the file is read.
+fs.promises.readFile is asynchronous (non-blocking) and returns a Promise; much better for server responsiveness.
+

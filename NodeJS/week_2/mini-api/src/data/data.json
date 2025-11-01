@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "Introduction to JavaScript",
+    "category": "Web Development",
+    "duration": "4 weeks"
+  },
+  {
+    "id": 2,
+    "title": "Node.js Basics",
+    "category": "Backend Development",
+    "duration": "3 weeks"
+  },
+  {
+    "id": 3,
+    "title": "React Fundamentals",
+    "category": "Frontend Development",
+    "duration": "5 weeks"
+  },
+  {
+    "id": 5,
+    "title": "MySQL SQL Language",
+    "category": "Database Development",
+    "duration": "3 weeks"
+  }
+]
