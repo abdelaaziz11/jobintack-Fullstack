@@ -59,6 +59,3 @@ By the end of the Node.js Formation, I was able to:
 - Debugging and error handling in backend apps.  
 - Using Node’s core modules: `fs`, `path`, `os`, `url`, and `http`.  
 
----
-
-## 📁 Project Structure
