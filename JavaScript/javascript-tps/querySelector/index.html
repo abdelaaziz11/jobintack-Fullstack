@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercice QuerySelector</title>
+  <style>
+    #box {
+      padding: 20px;
+      border: 1px solid black;
+      margin-bottom: 20px;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- Div avec h2 et deux paragraphes -->
+  <div id="box">
+    <h2>Titre original</h2>
+    <p class="desc">Paragraphe 1</p>
+    <p class="desc">Paragraphe 2</p>
+  </div>
+
+  <!-- Liste -->
+  <ul>
+    <li class="item">Élément 1</li>
+    <li class="item">Élément 2</li>
+    <li class="item">Élément 3</li>
+  </ul>
+
+  <!-- Bouton -->
+  <button id="btn">Changer</button>
+
+  <script>
+    // Changer le texte du titre
+    document.querySelector("#box h2").textContent = "Nouveau titre";
+
+    // Changer la couleur des paragraphes
+    document.querySelectorAll(".desc").forEach(p => {
+      p.style.color = "blue";
+    });
+
+    // Sélectionner uniquement le premier li et le mettre en gras
+    document.querySelector("ul li.item").style.fontWeight = "bold";
+
+    // Mettre en italique tous les li
+    document.querySelectorAll("ul li.item").forEach(li => {
+      li.style.fontStyle = "italic";
+    });
+
+    // Ajouter un onclick sur le bouton pour changer la couleur de fond de la div
+    document.querySelector("#btn").onclick = () => {
+      document.querySelector("#box").style.backgroundColor = "lightyellow";
+    };
+  </script>
+</body>
+</html>
