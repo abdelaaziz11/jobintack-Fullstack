@@ -1,0 +1,22 @@
+[
+  {
+    "id": "1",
+    "city": "Casablanca",
+    "country": "MA",
+    "timestamp": "2025-11-13T08:00:00Z",
+    "tempC": 20.5,
+    "humidity": 65,
+    "wind": { "speed": 5.2 },
+    "condition": "clear"
+  },
+  {
+    "id": "2",
+    "city": "Rabat",
+    "country": "MA",
+    "timestamp": "2025-11-13T09:00:00Z",
+    "tempC": 18.2,
+    "humidity": 70,
+    "wind": { "speed": 3.1 },
+    "condition": "clouds"
+  }
+]
