@@ -63,6 +63,7 @@ function App() {
 
         <h1>Annuaire d'utilisateurs</h1>
         <p>Temps écouté : {time}</p>
+        <p>Auto-refresh dans : {refreshTimer} secondes</p>
 
         <section className="form-search">
           <input
