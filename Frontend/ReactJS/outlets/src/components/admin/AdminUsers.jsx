@@ -76,13 +76,6 @@ const usersList = [
 export default function AdminUsers() {
   const [users, setUsers] = useState(usersList);
 
-  // useEffect(() => {
-  //   fetch('https://jsonplaceholder.typicode.com/users')
-  //     .then(res => res.json())
-  //     .then(data => setUsers(data))
-  //     .catch(error => {console.log(error)})
-  // },[])
-
 
   return (
     <div>
